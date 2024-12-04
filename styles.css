@@ -1,0 +1,123 @@
+/* Paleta de cores */
+:root {
+    --eerie-black: #222321ff;
+    --davys-gray: #4E4F4Dff;
+    --platinum: #EBECEAff;
+    --pear: #C3D610ff;
+    --white: #FEFEFEff;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--eerie-black);
+    color: var(--platinum);
+    line-height: 1.6;
+  }
+  
+  header {
+    text-align: center;
+    padding: 20px;
+    background: var(--davys-gray);
+    color: var(--white);
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  nav button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background: var(--pear);
+    border: none;
+    color: var(--eerie-black);
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  nav button:hover {
+    background: var(--platinum);
+  }
+  
+  .catalog {
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: center;
+  }
+  
+  .catalog form input,
+  .catalog form button {
+    margin: 10px 0;
+    padding: 10px;
+    width: 90%;
+    font-size: 1rem;
+    border: 1px solid var(--davys-gray);
+    border-radius: 5px;
+  }
+  
+  .catalog form button {
+    background: var(--pear);
+    color: var(--eerie-black);
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .catalog form button:hover {
+    background: var(--platinum);
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .grid .card {
+    background: var(--davys-gray);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .grid .card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--davys-gray);
+  }
+  
+  footer input {
+    padding: 10px;
+    width: 90%;
+    border-radius: 5px;
+    border: 1px solid var(--platinum);
+  }
+  
+ div {
+    width: 17vw;
+    height: 100%;
+    
+ }
+
+ .grid .card img {
+    width: 200px; /* Define a largura fixa */
+    height: 200px; /* Define a altura fixa */
+    object-fit: cover; /* Mantém a proporção e corta o excesso */
+    border-radius: 10px; /* Adiciona bordas arredondadas */
+    margin: 0 auto; /* Centraliza a imagem dentro do card */
+    display: block; /* Garante que o alinhamento funcione */
+}
