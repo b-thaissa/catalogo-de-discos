@@ -74,11 +74,12 @@
   }
   
   .grid {
-    display: flex;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta as colunas ao espaço disponível */
+    display: grid; /* Altere o display para grid */
+    grid-template-columns: repeat(5, 1fr); /* Define exatamente 4 colunas */
     gap: 10px; /* Espaçamento entre os itens */
-    padding: 20px;
+    padding: 20px; /* Espaço interno ao redor da grade */
 }
+
 
   
   .grid .card {
@@ -87,6 +88,7 @@
     overflow: hidden;
     text-align: center;
     padding: 10px;
+    
     
   }
   
