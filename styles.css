@@ -74,11 +74,12 @@
   }
   
   .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta as colunas ao espaço disponível */
+    gap: 10px; /* Espaçamento entre os itens */
     padding: 20px;
-  }
+}
+
   
   .grid .card {
     background: var(--davys-gray);
@@ -86,13 +87,19 @@
     overflow: hidden;
     text-align: center;
     padding: 10px;
+    
   }
   
   .grid .card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-  }
+    width: 100%; /* A imagem ocupará 100% da largura do card */
+    height: auto; /* Mantém a proporção da imagem */
+    max-width: 200px; /* Limita o tamanho máximo da imagem */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 10px; /* Mantém bordas arredondadas */
+    margin: 0 auto; /* Centraliza a imagem */
+    display: block; /* Garante que a imagem seja tratada como bloco */
+}
+
   
   footer {
     text-align: center;
@@ -113,11 +120,3 @@
     
  }
 
- .grid .card img {
-    width: 200px; /* Define a largura fixa */
-    height: 200px; /* Define a altura fixa */
-    object-fit: cover; /* Mantém a proporção e corta o excesso */
-    border-radius: 10px; /* Adiciona bordas arredondadas */
-    margin: 0 auto; /* Centraliza a imagem dentro do card */
-    display: block; /* Garante que o alinhamento funcione */
-}
