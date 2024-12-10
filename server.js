@@ -23,16 +23,15 @@ const Disco = mongoose.model('Disco', discoSchema);
 
 // Middleware
 app.use(bodyParser.json());
-//app.use(cors()); // Permite comunicação entre frontend e backend
 app.use(cors({
-    origin: '*', // Permite qualquer origem
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos HTTP permitidos
-    allowedHeaders: ['Content-Type', 'Authorization'], // Cabeçalhos permitidos
+    origin: '*', 
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
 }));
-
 
 // Rota para adicionar um novo disco
 app.post('/api/discos', async (req, res) => {
+    console.log("Dados recebidos:", req.body);  // Log para verificar os dados recebidos
     try {
         const novoDisco = new Disco(req.body);
         await novoDisco.save();
