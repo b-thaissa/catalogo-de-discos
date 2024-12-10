@@ -1,10 +1,4 @@
-const albumDisplay = document.getElementById('albumDisplay');
-const addAlbumForm = document.getElementById('addAlbumForm');
-const searchInput = document.getElementById('search');
-let albums = [];
-
-// Adicionar novo álbum
-addAlbumForm.addEventListener('submit', (e) => {
+addAlbumForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   
   const albumName = document.getElementById('albumName').value;
@@ -13,37 +7,39 @@ addAlbumForm.addEventListener('submit', (e) => {
   const coverUrl = document.getElementById('coverUrl').value;
 
   const album = { albumName, artistName, genre, coverUrl };
-  albums.push(album);
+  try {
+      const response = await fetch('http://localhost:3000/api/discos', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(album),
+      });
 
-  displayAlbums(albums);
+      if (response.ok) {
+          alert("Disco adicionado com sucesso!");
+          fetchAlbums(); // Atualiza a lista de álbuns
+      } else {
+          alert("Erro ao adicionar disco.");
+      }
+  } catch (err) {
+      console.error("Erro:", err);
+  }
+
   addAlbumForm.reset();
 });
 
-// Exibir álbuns dinamicamente
-function displayAlbums(list) {
-  albumDisplay.innerHTML = '';
-  list.forEach(album => {
-    const card = document.createElement('div');
-    card.classList.add('card');
-    card.innerHTML = `
-      <img src="${album.coverUrl}" alt="Capa de ${album.albumName}">
-      <h3>${album.albumName}</h3>
-      <p>Artista: ${album.artistName}</p>
-      <p>Gênero: ${album.genre}</p>
-    `;
-    albumDisplay.appendChild(card);
-  });
+async function fetchAlbums() {
+  try {
+      const response = await fetch('http://localhost:3000/api/discos');
+      if (response.ok) {
+          albums = await response.json();
+          displayAlbums(albums);
+      } else {
+          console.error("Erro ao buscar álbuns.");
+      }
+  } catch (err) {
+      console.error("Erro:", err);
+  }
 }
 
-// Filtrar por pesquisa
-searchInput.addEventListener('input', () => {
-  const query = searchInput.value.toLowerCase();
-  const filteredAlbums = albums.filter(album =>
-    album.albumName.toLowerCase().includes(query) ||
-    album.artistName.toLowerCase().includes(query)
-  );
-  displayAlbums(filteredAlbums);
-});
-
-// Exibir todos os álbuns
-document.getElementById('viewAll').addEventListener('click', () => displayAlbums(albums));
+// Chama a função ao carregar a página
+fetchAlbums();
