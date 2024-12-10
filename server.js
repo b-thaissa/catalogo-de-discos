@@ -7,12 +7,9 @@ const app = express();
 const PORT = 3000;
 
 // Conectar ao MongoDB
-mongoose.connect('mongodb://localhost:27017/discos_db', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
-    .then(() => console.log("Conectado ao MongoDB!"))
-    .catch(err => console.error("Erro ao conectar:", err));
+mongoose.connect('mongodb+srv://lonnysferrari:qTv4OhniAwtfUaZ2@cluster1.muuhy.mongodb.net/')
+.then(() => console.log("Conectado ao MongoDB!"))
+.catch(err => console.error("Erro ao conectar:", err));
 
 // Criar o esquema para os discos
 const discoSchema = new mongoose.Schema({
@@ -26,7 +23,13 @@ const Disco = mongoose.model('Disco', discoSchema);
 
 // Middleware
 app.use(bodyParser.json());
-app.use(cors()); // Permite comunicação entre frontend e backend
+//app.use(cors()); // Permite comunicação entre frontend e backend
+app.use(cors({
+    origin: '*', // Permite qualquer origem
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos HTTP permitidos
+    allowedHeaders: ['Content-Type', 'Authorization'], // Cabeçalhos permitidos
+}));
+
 
 // Rota para adicionar um novo disco
 app.post('/api/discos', async (req, res) => {

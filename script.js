@@ -41,5 +41,23 @@ async function fetchAlbums() {
   }
 }
 
+// Função para exibir os álbuns no frontend
+function displayAlbums(albums) {
+  const albumDisplay = document.getElementById('albumDisplay');
+  albumDisplay.innerHTML = ''; // Limpa o conteúdo atual
+
+  albums.forEach(album => {
+    const card = document.createElement('div');
+    card.classList.add('card');
+    card.innerHTML = `
+      <img src="${album.coverUrl}" alt="Capa de ${album.albumName}" />
+      <h3>${album.albumName}</h3>
+      <p>Artista: ${album.artistName}</p>
+      <p>Gênero: ${album.genre}</p>
+    `;
+    albumDisplay.appendChild(card); // Adiciona o card ao container
+  });
+}
+
 // Chama a função ao carregar a página
 fetchAlbums();
