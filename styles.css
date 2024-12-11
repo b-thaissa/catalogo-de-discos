@@ -34,6 +34,7 @@ header h1 {
   font-family: "Zen Dots", sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 60px;
 }
 
 nav button {
@@ -91,11 +92,13 @@ nav button:hover {
 
 
 .grid .card {
-  background: var(--davys-gray);
+  background: #C3D610ff;
   border-radius: 10px;
   overflow: hidden;
   text-align: center;
   padding: 10px;
+  font-family: "Saira", sans-serif;
+  color: var(--eerie-black);
 
 
 }
@@ -138,6 +141,6 @@ div {
 }
 
 #albumDisplay {
-  background-color: rgb(253, 232, 232);
+  background-color: var(--davys-gray);
 
 }
