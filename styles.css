@@ -1,124 +1,143 @@
 /* Paleta de cores */
 :root {
-    --eerie-black: #222321ff;
-    --davys-gray: #4E4F4Dff;
-    --platinum: #EBECEAff;
-    --pear: #C3D610ff;
-    --white: #FEFEFEff;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--eerie-black);
-    color: var(--platinum);
-    line-height: 1.6;
-  }
-  
-  header {
-    text-align: center;
-    padding: 20px;
-    background: var(--davys-gray);
-    color: var(--white);
-  }
-  
-  header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-  }
-  
-  nav button {
-    margin: 0 10px;
-    padding: 10px 20px;
-    background: var(--pear);
-    border: none;
-    color: var(--eerie-black);
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  nav button:hover {
-    background: var(--platinum);
-  }
-  
-  .catalog {
-    margin: 20px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  
-  .catalog form input,
-  .catalog form button {
-    margin: 10px 0;
-    padding: 10px;
-    width: 90%;
-    font-size: 1rem;
-    border: 1px solid var(--davys-gray);
-    border-radius: 5px;
-  }
-  
-  .catalog form button {
-    background: var(--pear);
-    color: var(--eerie-black);
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .catalog form button:hover {
-    background: var(--platinum);
-  }
-  
-  .grid {
-    display: grid; /* Altere o display para grid */
-    grid-template-columns: repeat(5, 1fr); /* Define exatamente 4 colunas */
-    gap: 10px; /* Espaçamento entre os itens */
-    padding: 20px; /* Espaço interno ao redor da grade */
+  --eerie-black: #222321ff;
+  --davys-gray: #4E4F4Dff;
+  --platinum: #EBECEAff;
+  --pear: #C3D610ff;
+  --white: #FEFEFEff;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--eerie-black);
+  color: var(--platinum);
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background: var(--davys-gray);
+  color: var(--white);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-family: "Zen Dots", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+nav button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background: var(--pear);
+  border: none;
+  color: var(--eerie-black);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+nav button:hover {
+  background: var(--platinum);
+}
+
+.catalog {
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.catalog form input,
+.catalog form button {
+  margin: 10px 0;
+  padding: 10px;
+  width: 90%;
+  font-size: 1rem;
+  border: 1px solid var(--davys-gray);
+  border-radius: 5px;
+}
+
+.catalog form button {
+  background: var(--pear);
+  color: var(--eerie-black);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.catalog form button:hover {
+  background: var(--platinum);
+}
+
+.grid {
+  display: grid;
+  /* Altere o display para grid */
+  grid-template-columns: repeat(5, 1fr);
+  /* Define exatamente 4 colunas */
+  gap: 10px;
+  /* Espaçamento entre os itens */
+  padding: 20px;
+  /* Espaço interno ao redor da grade */
 }
 
 
-  
-  .grid .card {
-    background: var(--davys-gray);
-    border-radius: 10px;
-    overflow: hidden;
-    text-align: center;
-    padding: 10px;
-    
-    
-  }
-  
-  .grid .card img {
-    width: 100%; /* A imagem ocupará 100% da largura do card */
-    height: auto; /* Mantém a proporção da imagem */
-    max-width: 200px; /* Limita o tamanho máximo da imagem */
-    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
-    border-radius: 10px; /* Mantém bordas arredondadas */
-    margin: 0 auto; /* Centraliza a imagem */
-    display: block; /* Garante que a imagem seja tratada como bloco */
+
+.grid .card {
+  background: var(--davys-gray);
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  padding: 10px;
+
+
 }
 
-  
-  footer {
-    text-align: center;
-    padding: 20px;
-    background: var(--davys-gray);
-  }
-  
-  footer input {
-    padding: 10px;
-    width: 90%;
-    border-radius: 5px;
-    border: 1px solid var(--platinum);
-  }
-  
- div {
-    width: 17vw;
-    height: 100%;
-    
- }
+.grid .card img {
+  width: 100%;
+  /* A imagem ocupará 100% da largura do card */
+  height: auto;
+  /* Mantém a proporção da imagem */
+  max-width: 200px;
+  /* Limita o tamanho máximo da imagem */
+  object-fit: cover;
+  /* Garante que a imagem preencha o espaço sem distorcer */
+  border-radius: 10px;
+  /* Mantém bordas arredondadas */
+  margin: 0 auto;
+  /* Centraliza a imagem */
+  display: block;
+  /* Garante que a imagem seja tratada como bloco */
+}
 
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--davys-gray);
+}
+
+footer input {
+  padding: 10px;
+  width: 90%;
+  border-radius: 5px;
+  border: 1px solid var(--platinum);
+}
+
+div {
+  width: 17vw;
+  height: 100%;
+
+}
+
+#albumDisplay {
+  background-color: rgb(253, 232, 232);
+
+}
