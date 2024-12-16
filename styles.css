@@ -194,11 +194,11 @@ div {
 
   .grid {
     grid-template-columns: repeat(2, 1fr); /* Reduz o número de colunas para 2 */
-    gap: 5px; /* Reduz o espaçamento entre os itens */
+    gap: 3px; /* Reduz o espaçamento entre os itens */
   }
 
   .grid .card img {
-    max-width: 100px; /* Reduz o tamanho máximo das imagens */
+    max-width: 120px; /* Reduz o tamanho máximo das imagens */
   }
 
   footer {
