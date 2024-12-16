@@ -164,3 +164,87 @@ div {
   background-color: var(--davys-gray);
 
 }
+
+/* Smartphones (telas de até 480px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px; /* Reduz o tamanho da fonte para dispositivos menores */
+  }
+
+  header h1 {
+    font-size: 36px; /* Ajusta o tamanho do título */
+  }
+
+  nav button {
+    padding: 8px 15px; /* Reduz o espaçamento dos botões */
+    font-size: 0.9rem;
+  }
+
+  .catalog {
+    margin: 10px auto;
+    max-width: 100%; /* Garante que a largura ocupe a tela */
+    padding: 10px;
+  }
+
+  .catalog form input,
+  .catalog form button {
+    width: 100%; /* Inputs ocupam toda a largura */
+    font-size: 0.9rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* Reduz o número de colunas para 2 */
+    gap: 5px; /* Reduz o espaçamento entre os itens */
+  }
+
+  .grid .card img {
+    max-width: 100px; /* Reduz o tamanho máximo das imagens */
+  }
+
+  footer {
+    font-size: 0.9rem;
+    padding: 15px;
+  }
+}
+
+/* Tablets (telas de até 768px) */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px; /* Ajuste moderado do tamanho da fonte */
+  }
+
+  header h1 {
+    font-size: 48px; /* Reduz levemente o tamanho do título */
+  }
+
+  nav button {
+    padding: 10px 18px;
+    font-size: 1rem;
+  }
+
+  .catalog {
+    max-width: 90%; /* Garante que a largura não ocupe a tela inteira */
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* Exibe 3 colunas no layout */
+    gap: 10px;
+  }
+
+  .grid .card img {
+    max-width: 150px; /* Ajusta o tamanho das imagens */
+  }
+}
+
+/* Pequenos desktops e laptops (largura entre 769px e 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr); /* Exibe 4 colunas */
+    gap: 15px;
+  }
+
+  .catalog form input,
+  .catalog form button {
+    font-size: 1.1rem; /* Ajuste para telas médias */
+  }
+}
