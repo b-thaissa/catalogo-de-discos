@@ -16,7 +16,7 @@ addAlbumForm.addEventListener('submit', async (e) => {
   const album = { albumName, artistName, genre, coverUrl };
   
   try {
-    const response = await fetch('http://localhost:3000/api/discos', {
+    const response = await fetch('https://catalogo-de-discos-3.onrender.com/api/discos', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(album),
@@ -37,7 +37,7 @@ addAlbumForm.addEventListener('submit', async (e) => {
 
 async function fetchAlbums() {
   try {
-    const response = await fetch('http://localhost:3000/api/discos');
+    const response = await fetch('https://catalogo-de-discos-3.onrender.com/api/discos');
     if (response.ok) {
       const albums = await response.json();
       displayAlbums(albums);
@@ -69,3 +69,4 @@ function displayAlbums(albums) {
 
 // Chama a função ao carregar a página
 fetchAlbums();
+
