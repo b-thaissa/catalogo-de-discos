@@ -1,10 +1,26 @@
-/* Paleta de cores */
 :root {
   --eerie-black: #222321ff;
   --davys-gray: #4E4F4Dff;
   --platinum: #EBECEAff;
   --pear: #C3D610ff;
   --white: #FEFEFEff;
+
+  /* Cores adicionais */
+  --charcoal: #36454F;
+  --jet-black: #292929;
+  --cool-gray: #D6D8DC;
+
+  --asparagus: #87A96B;
+  --yellow-green: #9ACD32;
+  --olive-drab: #6B8E23;
+
+  --tomato: #FF6347;
+  --coral: #FF7F50;
+  --raspberry: #D32F2F;
+
+  --alabaster: #FAFAFA;
+  --ivory: #FFFFF0;
+  --misty-rose: #FFE4E1;
 
 }
 
@@ -16,7 +32,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: var(--eerie-black);
+  background-color: #FFFFF0;
   color: var(--platinum);
   line-height: 1.6;
 }
@@ -24,8 +40,8 @@ body {
 header {
   text-align: center;
   padding: 20px;
-  background: var(--davys-gray);
-  color: var(--white);
+  background: var(--pear);
+  color: var(--jet-black);
 }
 
 header h1 {
@@ -40,7 +56,7 @@ header h1 {
 nav button {
   margin: 0 10px;
   padding: 10px 20px;
-  background: var(--pear);
+  background: #87A96B;
   border: none;
   color: var(--eerie-black);
   font-weight: bold;
@@ -55,6 +71,8 @@ nav button:hover {
   margin: 20px auto;
   max-width: 600px;
   text-align: center;
+  color: #292929;
+
 }
 
 .catalog form input,
@@ -63,8 +81,10 @@ nav button:hover {
   padding: 10px;
   width: 90%;
   font-size: 1rem;
-  border: 1px solid var(--davys-gray);
+  border: 1px solid ivory;
   border-radius: 5px;
+  background-color: #292929;
+  color: ivory;
 }
 
 .catalog form button {
@@ -75,7 +95,7 @@ nav button:hover {
 }
 
 .catalog form button:hover {
-  background: var(--platinum);
+  background: gray;
 }
 
 .grid {
@@ -85,7 +105,7 @@ nav button:hover {
   /* Define exatamente 4 colunas */
   gap: 10px;
   /* Espaçamento entre os itens */
-  padding: 20px;
+  padding: 15px;
   /* Espaço interno ao redor da grade */
 }
 
