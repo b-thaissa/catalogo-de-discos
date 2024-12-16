@@ -103,9 +103,9 @@ nav button:hover {
   /* Altere o display para grid */
   grid-template-columns: repeat(5, 1fr);
   /* Define exatamente 4 colunas */
-  gap: 10px;
+  gap: 8px;
   /* Espaçamento entre os itens */
-  padding: 15px;
+  padding: 8px;
   /* Espaço interno ao redor da grade */
 }
 
@@ -116,7 +116,7 @@ nav button:hover {
   border-radius: 10px;
   overflow: hidden;
   text-align: center;
-  padding: 10px;
+  padding: 8px;
   font-family: "Saira", sans-serif;
   color: var(--eerie-black);
 
