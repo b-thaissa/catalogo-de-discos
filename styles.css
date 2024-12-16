@@ -124,7 +124,7 @@ nav button:hover {
 }
 
 .grid .card img {
-  width: 100%;
+  width: 80%;
   /* A imagem ocupará 100% da largura do card */
   height: auto;
   /* Mantém a proporção da imagem */
