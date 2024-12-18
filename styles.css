@@ -172,7 +172,7 @@ div {
   }
 
   header h1 {
-    font-size: 36px; /* Ajusta o tamanho do título */
+    font-size: 50px; /* Ajusta o tamanho do título */
   }
 
   nav button {
@@ -248,3 +248,17 @@ div {
     font-size: 1.1rem; /* Ajuste para telas médias */
   }
 }
+
+footer p {
+  font-size: 1rem;
+  color: var(--platinum);
+  text-align: center;
+  margin: 0;
+}
+
+.audiowide-regular {
+  font-family: "Audiowide", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
