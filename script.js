@@ -70,3 +70,9 @@ function displayAlbums(albums) {
 // Chama a função ao carregar a página
 fetchAlbums();
 
+app.use(cors({
+  origin: 'https://catalogo-de-discos-4.onrender.com', // Substitua pelo seu domínio
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
+

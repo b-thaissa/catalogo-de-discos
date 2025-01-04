@@ -1,13 +1,14 @@
+require('dotenv').config();  // Para carregar variáveis de ambiente
+
 const express = require('express');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
 const PORT = 3000;
 
 // Conectar ao MongoDB
-mongoose.connect('mongodb+srv://lonnysferrari:qTv4OhniAwtfUaZ2@cluster1.muuhy.mongodb.net/discos')
+mongoose.connect(process.env.MONGODB_URI)
 .then(() => console.log("Conectado ao MongoDB!"))
 .catch(err => console.error("Erro ao conectar:", err));
 
@@ -22,7 +23,7 @@ const discoSchema = new mongoose.Schema({
 const Disco = mongoose.model('Disco', discoSchema);
 
 // Middleware
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(cors({
     origin: '*', 
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
@@ -31,7 +32,12 @@ app.use(cors({
 
 // Rota para adicionar um novo disco
 app.post('/api/discos', async (req, res) => {
-    console.log("Dados recebidos:", req.body);  // Log para verificar os dados recebidos
+    const { albumName, artistName, genre, coverUrl } = req.body;
+
+    if (!albumName || !artistName || !genre || !coverUrl) {
+        return res.status(400).json({ error: "Todos os campos são obrigatórios." });
+    }
+
     try {
         const novoDisco = new Disco(req.body);
         await novoDisco.save();
@@ -53,4 +59,3 @@ app.get('/api/discos', async (req, res) => {
 
 // Iniciar o servidor
 app.listen(PORT, () => console.log(`Servidor rodando em http://localhost:${PORT}`));
-
